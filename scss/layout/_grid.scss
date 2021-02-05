@@ -1,0 +1,138 @@
+.row{
+    max-width: $grid-width;
+    margin: 0 auto; 
+
+    &:not(:last-child) {  // Not(){} pseudoclass selects everything except the targeted element, i.e. last child
+        margin-bottom: $margin-vertical;
+
+        @include respond(tab-port){
+            margin-bottom: $margin-vertical-small;
+        }
+
+        
+    }
+
+    @include respond(tab-port){
+        max-width: 55rem;
+        padding: 0 3rem;
+    }
+
+    @include clearfix;   // imports the clearfloat we defined in the mixins folder
+    
+    [class^="col-"] {  // to select and style all col- at once, we use "include attribute"
+        color: $color-grey-dark;
+        float: left;
+
+        &:not(:last-child){
+            margin-right: $margin-horizontal;
+
+            @include respond(tab-port){
+                margin-right: 0;
+                margin-bottom: $margin-vertical-small;
+            }
+        }
+
+        @include respond(tab-port){
+            width: 100% !important;
+        }
+    }
+
+    // grid layout
+    .col-1-of-2{
+        width: calc((100% - #{$margin-horizontal}) / 2); 
+    }
+
+    .col-1-of-3{
+        width: calc((100% - 2 * #{$margin-horizontal}) / 3);
+    }
+
+    .col-1-of-4{
+        width: calc((100% - 3 * #{$margin-horizontal}) / 4);
+    }
+
+    .col-2-of-3{
+        width: calc(2 * ((100% - 2 * #{$margin-horizontal}) / 3) + #{$margin-horizontal});
+    }
+
+    .col-2-of-4{
+        width: calc((100% - #{$margin-horizontal}) / 2);
+    }
+
+    .col-3-of-4{
+        width: calc(3 * ((100% - 3 * #{$margin-horizontal}) / 4) + 2 * #{$margin-horizontal});
+    }
+
+}
+
+
+// GRID DEFINITIONS 
+/*
+    <section class="grid-test">
+        <div class="row">
+            <div class="col-1-of-2">
+                Col 1 of 2
+            </div>
+            <div class="col-1-of-2">
+                Col 1 of 2
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                Col 2 of 3
+            </div>
+            <div class="col-2-of-3">
+                Col 2 of 3
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-2-of-4">
+                Col 2 of 4
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-3-of-4">
+                Col 3 of 4
+            </div>
+        </div>
+    </section>  
+
+*/

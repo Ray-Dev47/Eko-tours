@@ -1,0 +1,30 @@
+.feature-box{
+    background-color: rgba($color-white, .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 1 1.5rem 4rem rgba($color-black, .15) ;
+    transition: transform .3s;
+
+    @include respond (tab-port) {
+        padding: 2rem;
+    }
+
+
+    &__icon{
+        font-size: 6rem;
+        border-bottom: .5rem;
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+     // to make the gradient appear behind the text, we use webkit prefix below:
+        -webkit-background-clip:text;
+         background-clip: text;
+         color: transparent;   
+    }
+
+    &:hover{
+        transform: translateY(-1.2rem) scale(1.03);
+        transition: all .2s;
+    }
+
+}

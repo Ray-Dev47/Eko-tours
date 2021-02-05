@@ -1,0 +1,50 @@
+
+
+@import "abstracts/functions";
+@import "abstracts/_mixins";
+@import "abstracts/_variables";
+
+
+@import "base/_animations";
+@import "base/_base";
+@import "base/_utilities";
+@import "base/_typography";
+
+@import "component/_bg-video";
+@import "component/_button";
+@import "component/_card";
+@import "component/composition";
+@import "component/feature-box";
+@import "component/form";
+@import "component/popup";
+@import "component/_story";
+
+@import "layout/footer";
+@import "layout/_header.scss";
+@import "layout/grid";
+@import "layout/navigation";
+
+@import "pages/home";
+
+
+/*
+.flatUiColors
+   light green:  #7ed56f; 
+   medium green : #06ff5a;
+   dark green: #28b485;
+
+   max-width: 1540px;
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+

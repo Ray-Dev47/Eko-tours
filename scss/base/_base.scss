@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;   /*inherited from the parent*/
+}
+
+html{
+  /* font-size: 10px;    best to use - •	rems are always measured relative to the document’s root font-size */
+   font-size: 62.5%;  /*10/16    note: 16px is default font size and this will enable the user adjust the web browser font as desired  as well as zoom in*/
+
+   // Mixin for media query
+/*
+   @include respond(phone){  // responsive!
+      font-size: 50%;
+   }   commented out since its equal to below */
+
+   
+   @include respond(tab-land){     //width less than 1200
+      font-size: 56.25%;          // 1rem = 9px, 9/16 = 56.25%
+   }
+
+   @include respond(tab-port){     // width less than 900
+      font-size: 50%;        //1rem = 8px, 8/16 = 50%
+   }
+
+   @include respond( big-desktop){  
+      font-size: 75%;            //1 rem = 12px, 12/16 = 75%
+   }
+
+}
+
+body{
+   box-sizing: border-box;
+   padding: 3rem;
+
+   @include respond(tab-port){    
+      padding: 0;
+   }
+}
